@@ -1,0 +1,21 @@
+button {
+  background-color: #F72585;
+  padding: 10px 40px;
+  border: 0px solid transparent;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+button:hover {
+  background-color: #ca075f;
+}
+
+button:focus {
+  outline:0;
+}
+
+h2 {
+  margin: 0;
+}

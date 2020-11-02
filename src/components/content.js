@@ -1,6 +1,7 @@
 import './content.scss'
 import Seats from "./seats"
 import Overview from "./overview"
+import Button from "./button"
 
 export default function Content() {
   return (
@@ -10,6 +11,7 @@ export default function Content() {
         <Seats />
         <Overview />
       </div>
+      <Button text="Confirm" />
     </div>
   )
 }
