@@ -8,4 +8,8 @@
 
 .seats-wrapper {
   margin: 20px 20px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
