@@ -2,7 +2,7 @@
   cursor: pointer;
   height: 80px;
   width: 80px;
-  background-color: turquoise;
+  background-color: #4CC9F0;
   border: transparent;
   border-radius: 10px;
   display: flex;
@@ -11,9 +11,9 @@
 }
 
 .seat:hover {
-  background-color: #23b8b1;
+  background-color: #4361EE;
 }
 
 .seat.selected {
-  background-color: #23b8b1;
+  background-color: #4361EE;
 }
