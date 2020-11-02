@@ -1,0 +1,15 @@
+.seat {
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  background-color: turquoise;
+  border: transparent;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat:hover {
+  background-color: #23b8b1;
+}

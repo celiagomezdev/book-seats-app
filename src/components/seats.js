@@ -1,4 +1,4 @@
-// import Seat from "./seat.js"
+import Seat from "./seat.js"
 import "./seats.scss"
 
 export default function Seats() {
@@ -6,7 +6,7 @@ export default function Seats() {
     <section id="seats" aria-label="Seats section">
       <h1>Seats</h1>
       <div class="seats-wrapper">
-        {/* <Seat /> */}
+        <Seat />
       </div>
     </section>
   )
