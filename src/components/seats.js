@@ -15,7 +15,7 @@ export default function Seats(props) {
   return (
     <section id="seats" aria-label="Seats section">
       <h1>Seats</h1>
-      <div class="seats-wrapper">
+      <div className="seats-wrapper">
         {listOfSeats}
       </div>
     </section>
