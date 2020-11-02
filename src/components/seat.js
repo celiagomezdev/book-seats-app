@@ -1,9 +1,20 @@
+import classNames from "classnames"
 import "./seat.scss"
 
 export default function Seat(props) {
+  const selectSeat = (seatId) => {
+    props.onSeatSelection(seatId)
+  }
+
+  const seatClass = classNames({
+    seat: true,
+    selected: props.seat.status === "selected",
+    booked: props.seat.status === "booked"
+  })
+
   return (
-    <section className="seat" aria-label="Seat 1">
-      <h1> {props.number} </h1>
+    <section className={seatClass} aria-label="Seat 1" onClick={() => selectSeat(props.seat.id)}>
+      <h1> {props.seat.id} </h1>
     </section>
   )
 }

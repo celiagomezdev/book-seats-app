@@ -4,7 +4,13 @@ import "./seats.scss"
 export default function Seats(props) {
   const seats = props.seats
 
-  const listOfSeats = seats.map(seat => <Seat number={seat.number}/>)
+  const handleSeatSelection = (seatId) => {
+    props.onSeatSelection(seatId)
+  }
+
+  const listOfSeats = seats.map(seat => 
+    <Seat seat={seat} key={seat.id} onSeatSelection={(seatId) => handleSeatSelection(seatId)}/>
+  )
 
   return (
     <section id="seats" aria-label="Seats section">
