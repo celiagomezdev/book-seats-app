@@ -46,9 +46,19 @@ export default function Content() {
 
   const handleSeatChange = (seatId) => {
     const newSeats = seats.map(seat => {
+      if (seat.status === "booked") return seat
       const checkStatus = seat.status === "selected" ? "available" : "selected"
       if (seat.id === seatId) return {...seat, status: checkStatus }
       return seat
+    })
+
+    setSeats(newSeats)
+  }
+
+  const confirmSelection = () => {    
+    const newSeats = seats.map(seat => {
+      const checkStatus = seat.status === "selected" ? "booked" : "available"
+      return {...seat, status: checkStatus }
     })
 
     setSeats(newSeats)
@@ -61,7 +71,7 @@ export default function Content() {
         <Seats seats={seats} onSeatSelection={(selectedSeat) => handleSeatChange(selectedSeat)}/>
         <Overview seats={seats} />
       </div>
-      <Button text="Confirm" />
+      <Button text="Confirm" onClick={() => confirmSelection()}/>
     </div>
   )
 }
