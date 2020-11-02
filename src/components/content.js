@@ -44,6 +44,8 @@ export default function Content() {
     },
   ])
 
+  const [shouldComponentBeDisabled, setShouldComponentBeDisabled] = useState(false)
+
   const handleSeatChange = (seatId) => {
     const newSeats = seats.map(seat => {
       if (seat.status === "booked") return seat
@@ -62,13 +64,18 @@ export default function Content() {
     })
 
     setSeats(newSeats)
+    setShouldComponentBeDisabled(true)
   }
 
   return (
     <div id="content">
       <div className="title"><h1>Booking Seats App</h1></div>
       <div className="content-wrapper">
-        <Seats seats={seats} onSeatSelection={(selectedSeat) => handleSeatChange(selectedSeat)}/>
+        <Seats 
+          seats={seats} 
+          onSeatSelection={(selectedSeat) => handleSeatChange(selectedSeat)} 
+          disabled={shouldComponentBeDisabled}
+        />
         <Overview seats={seats} />
       </div>
       <Button text="Confirm" onClick={() => confirmSelection()}/>
