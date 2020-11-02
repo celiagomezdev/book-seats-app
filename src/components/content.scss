@@ -1,8 +1,9 @@
 #content {
   margin: 100px auto;
+  padding: 40px;
   background-color: #E8E8E8;
-  height: 900px;
   width: 950px;
+  height: 100%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -11,6 +12,10 @@
 }
 
 .content-wrapper {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
 }
