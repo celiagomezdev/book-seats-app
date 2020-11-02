@@ -5,12 +5,7 @@ export default function Overview(props) {
   const seats = props.seats
   const [areThereSelectedSeats, setThereAreSelectedSeats] = useState(false)
   const [areThereBookedSeats, setAreThereBookedSeats] = useState(false)
-
-  const seatsList = seats.map(seat => {
-    const selectedOrBookedSeat = seat.status === "selected" || seat.status === "booked"
-    if (selectedOrBookedSeat) 
-      return <li>Seat number {seat.id}</li>
-  })
+  const selectedOrBookedSeats = seats.filter(seat => seat.status === "selected" || seat.status === "booked")
 
   useEffect(() => {
     const selectedSeats = seats.filter(seat => seat.status === "selected")
@@ -25,6 +20,7 @@ export default function Overview(props) {
     else if (areThereBookedSeats) return "These are your booked seats:" 
     else return "Start selecting your seats!"
   }
+
   return (
     <section id="overview" aria-label="Overview section">
       <h1>Overview</h1>
@@ -32,9 +28,9 @@ export default function Overview(props) {
         { areThereBookedSeats && <h1 className="confirmed-title">SEATS CONFIRMED!</h1> }
         <p>{currentOverviewText()}</p>
         <ul>
-          {seatsList}
+          {selectedOrBookedSeats.map(({id}) => <li>Seat number {id}</li>)}
         </ul>
-        <p>Confirm your selection when you are done.</p>
+      {!areThereBookedSeats && <p>Confirm your selection when you are done.</p>}
       </div>
     </section>
   )
