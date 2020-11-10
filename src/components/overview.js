@@ -25,7 +25,7 @@ export default function Overview(props) {
     <section id="overview" aria-label="Overview section">
       <h1>Overview</h1>
       <div className="overview-wrapper">
-        { areThereBookedSeats && <h1 className="confirmed-title">SEATS CONFIRMED!</h1> }
+        {areThereBookedSeats && <h1 className="confirmed-title">SEATS CONFIRMED!</h1>}
         <p>{currentOverviewText()}</p>
         <ul>
           {selectedOrBookedSeats.map(({id}) => <li>Seat number {id}</li>)}
